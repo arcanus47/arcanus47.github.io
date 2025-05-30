@@ -29,7 +29,8 @@
     }
 
     .hero-header {
-      background-image: url('images/header-background.png'); /* Reemplaza con tu imagen */
+      background-image: url('images/header-background.png');
+      /* Reemplaza con tu imagen */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -37,19 +38,23 @@
       color: var(--text-light);
       position: relative;
     }
-    
+
     .hero-header::before {
       content: "";
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(0, 0, 0, 0.5); /* oscurece la imagen para que el texto sea legible */
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      /* oscurece la imagen para que el texto sea legible */
       z-index: 1;
     }
-    
+
     .hero-header .container {
       position: relative;
       z-index: 2;
-    }    
+    }
 
     section {
       padding: 60px 0;
@@ -120,6 +125,36 @@
       color: #888;
       text-align: center;
       padding: 20px 0;
+    }
+
+    .grayscale {
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: 0.3s ease-in-out;
+    }
+
+    .grayscale:hover {
+      filter: none;
+      opacity: 1;
+    }
+
+    .logo-cliente {
+      max-height: 120px;
+      /* ajusta según lo que necesites */
+      max-width: 100%;
+      object-fit: contain;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: 0.3s ease;
+    }
+
+    .logo-cliente:hover {
+      filter: none;
+      opacity: 1;
+    }
+
+    .bg-cliente {
+      background-color: #1c1c1c;
     }
   </style>
 </head>
@@ -337,7 +372,6 @@
     </div>
   </section>
 
-
   <!-- Proyectos -->
   <section id="proyectos">
     <div class="container">
@@ -390,8 +424,8 @@
               <img src="images/work-5.png" class="card-img-top" alt="Proyecto 5">
               <div class="card-body">
                 <h5 class="card-title">LoxBasic</h5>
-                <p class="card-text">Es un lenguaje de programación el cual es estructurado.</p>
-                <a href="https://loxbasic394781747.wordpress.com/" class="btn btn-primary">Detalles</a>
+                <p class="card-text">Es un lenguaje de programación el cual es estructurado.</p> <a
+                  href="https://loxbasic394781747.wordpress.com/" class="btn btn-primary">Detalles</a>
               </div>
             </div>
           </div>
@@ -407,6 +441,29 @@
           </div>
         </div>
       </div>
+  </section>
+
+  <!-- Clientes -->
+  <section id="clientes" class="py-5 bg-cliente">
+    <div class="container">
+      <div class="row justify-content-center align-items-center g-4">
+        <div class="col-4 col-md-2 text-center">
+          <img src="images/clientes/cliente-1.png" alt="Cliente 1" class="logo-cliente">
+        </div>
+        <div class="col-4 col-md-2 text-center">
+          <img src="images/clientes/cliente-2.png" alt="Cliente 2" class="logo-cliente">
+        </div>
+        <div class="col-4 col-md-2 text-center">
+          <img src="images/clientes/cliente-3.png" alt="Cliente 3" class="logo-cliente">
+        </div>
+        <div class="col-4 col-md-2 text-center">
+          <img src="images/clientes/cliente-4.png" alt="Cliente 4" class="logo-cliente">
+        </div>
+        <div class="col-4 col-md-2 text-center">
+          <img src="images/clientes/cliente-5.png" alt="Cliente 5" class="logo-cliente">
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Contacto -->
