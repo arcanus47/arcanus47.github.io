@@ -4,546 +4,760 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CHCHD</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    :root {
-      --bg-dark: #121212;
-      --bg-darker: #0d0d0d;
-      --text-light: #e4e4e4;
-      --text-muted: #bbbbbb;
-      --accent: #4f8cff;
-    }
+  <title>ARCANUS47</title>
 
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-light);
-      padding-top: 56px;
-    }
+  <meta name="description" content="Desarrollador de escritorio, ciberseguridad y freelancer.">
+  <meta property="og:title" content="Cheremi Checo Domínguez — Portafolio">
+  <meta property="og:description" content="Portafolio y proyectos.">
 
-    header {
-      background-color: var(--bg-darker);
-      padding: 80px 0;
-      text-align: center;
-    }
+  <!-- Materialize CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet" />
 
-    .hero-header {
-      background-image: url('images/header-background.png');
-      /* Reemplaza con tu imagen */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      padding: 120px 0;
-      color: var(--text-light);
-      position: relative;
-    }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Montserrat:wght@400;600;700&display=swap"
+    rel="stylesheet">
 
-    .hero-header::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(0, 0, 0, 0.5);
-      /* oscurece la imagen para que el texto sea legible */
-      z-index: 1;
-    }
+  <!-- Iconos de Materialize -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    .hero-header .container {
-      position: relative;
-      z-index: 2;
-    }
+  <!-- Font Awesome (Para íconos de redes sociales) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
-    section {
-      padding: 60px 0;
-    }
-
-    h1,
-    h2,
-    h3,
-    h5 {
-      color: var(--text-light);
-    }
-
-    p,
-    .card-text,
-    .form-label {
-      color: var(--text-muted);
-    }
-
-    .navbar {
-      background-color: #1c1c1c !important;
-    }
-
-    .navbar .nav-link {
-      color: var(--text-muted) !important;
-    }
-
-    .navbar .nav-link:hover {
-      color: var(--accent) !important;
-    }
-
-    .bg-light,
-    .card {
-      background-color: #1a1a1a !important;
-      color: var(--text-light);
-      border: 1px solid #2a2a2a;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      transition: transform 0.3s;
-      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
-    }
-
-    .btn-primary {
-      background-color: var(--accent);
-      border-color: var(--accent);
-    }
-
-    .btn-primary:hover {
-      background-color: #3f76d2;
-      border-color: #3f76d2;
-    }
-
-    input,
-    textarea {
-      background-color: #222 !important;
-      color: var(--text-light) !important;
-      border: 1px solid #444;
-    }
-
-    input::placeholder,
-    textarea::placeholder {
-      color: #888;
-    }
-
-    footer {
-      background-color: #1c1c1c;
-      color: #888;
-      text-align: center;
-      padding: 20px 0;
-    }
-
-    .grayscale {
-      filter: grayscale(100%);
-      opacity: 0.7;
-      transition: 0.3s ease-in-out;
-    }
-
-    .grayscale:hover {
-      filter: none;
-      opacity: 1;
-    }
-
-    .logo-cliente {
-      max-height: 120px;
-      /* ajusta según lo que necesites */
-      max-width: 100%;
-      object-fit: contain;
-      filter: grayscale(100%);
-      opacity: 0.7;
-      transition: 0.3s ease;
-    }
-
-    .logo-cliente:hover {
-      filter: none;
-      opacity: 1;
-    }
-
-    .bg-cliente {
-      background-color: #1c1c1c;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand text-light" href="#">Mi Portafolio</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
-          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://chsolutions-academy.netlify.app/book" target="_blank">Libros</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://dev.to/arcanus47" target="_blank">Artículos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+  <div class="navbar-fixed">
+    <nav class="blue-grey darken-4">
+      <div class="nav-wrapper container"
+        style="position: relative; display: flex; justify-content: center; align-items: center;">
+
+        <!-- Menú Desktop centrado -->
+        <ul class="center-align hide-on-med-and-down"
+          style="display: flex; justify-content: center; gap: 20px; margin: 0;">
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="#sobre-mi">Sobre mi</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="libros.html">Libros</a></li>
+          <li><a href="https://dev.to/arcanus47" target="_blank">Articulos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
         </ul>
+
+        <!-- Menú móvil -->
+        <a href="#" data-target="mobile-menu" class="sidenav-trigger" style="position: absolute; right: 0;">
+          <i class="material-icons">menu</i>
+        </a>
+
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
+
+  <!-- Menú Móvil -->
+  <ul class="sidenav" id="mobile-menu">
+    <li><a href="index.html#inicio">Inicio</a></li>
+    <li><a href="#sobre-mi">Sobre mi</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="libros.html">Libros</a></li>
+    <li><a href="https://dev.to/arcanus47" target="_blank">Articulos</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
 
   <!-- Header -->
-  <header class="hero-header">
-    <section id="inicio">
-      <div class="container text-center">
-        <h1 class="display-4">Cheremi Checo Domínguez</h1>
-        <p class="lead">Desarrollador de Escritorio | Ciberseguridad | Freelancer</p>
+  <header id="inicio" class="section center-align header-offset"
+    style="background: url('assets/img/header-background.png') center/cover no-repeat; padding: 70px 0; background-blend-mode: multiply; background-color: rgba(0,0,0,0.6);">
+    <div class="container white-text">
+      <div class="row valign-wrapper">
+
+        <!-- Columna izquierda: imagen/logo -->
+        <div class="col s12 m5 center-align">
+          <img src="assets/img/logo.png" alt="Logo de ARCANUS47" style="max-width: 100%; height: auto;" />
+        </div>
+
+        <!-- Columna derecha: texto -->
+        <div class="col s12 m11">
+          <h3 class="white-text" style="text-align: justify;">Cheremi Checo Domínguez</h3>
+          <h5 class="flow-text" style="text-align: justify;">Desarrollador de Escritorio | Ciberseguridad | Freelancer
+          </h5>
+        </div>
+
       </div>
-    </section>
   </header>
 
-  <!-- Sobre mí -->
-  <section id="sobre-mi">
+  <!-- Sobre mi -->
+  <section id="sobre-mi" class="section grey darken-4 white-text">
     <div class="container">
-      <h2 class="text-center mb-4">Sobre mí</h2>
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-12">
-          <div style="text-align: justify;" class="text-light">
-            <p>
-              Hola, soy Cheremi, un desarrollador de software apasionado y con experiencia, enfocado en crear soluciones
-              digitales funcionales, modernas y adaptadas a las necesidades reales de los usuarios. Disfruto enfrentar
-              nuevos desafíos, aprender constantemente y contribuir al éxito de cada proyecto en el que participo.
-            </p>
-            <p>
-              Soy fundador de <a href="https://chsolutionsoficial.github.io/" target="_blank"
-                class="text-decoration-none text-light fw-bold">CH Solutions</a>, una microagencia de desarrollo de
-              software especializada en ofrecer soluciones tecnológicas personalizadas para empresas y emprendedores,
-              ajustadas a sus necesidades y presupuestos.
-            </p>
-            <p>
-              También creé <a href="https://chsolutions-academy.netlify.app/" target="_blank"
-                class="text-decoration-none text-light fw-bold">CH Solutions Academy</a>, una plataforma educativa
-              sencilla pero efectiva, donde publico cursos en formato HTML para ayudar a nuevos desarrolladores a dar
-              sus primeros pasos en el mundo de la programación.
-            </p>
-            <p>
-              Además, escribo manuales y contenidos educativos sobre programación, y ocasionalmente publico artículos
-              relacionados con desarrollo, educación y tecnología para compartir conocimientos con la comunidad.
-            </p>
-            <p>
-              Mi misión es seguir creciendo como profesional, compartir lo que aprendo y construir tecnología que ayude
-              a otros a avanzar.
-            </p>
-          </div>
+      <h2 class="center-align">Sobre mí</h2>
+
+      <div class="row">
+        <div class="col s12">
+          <p>
+            Hola, soy <strong>Cheremi</strong>, un desarrollador de software apasionado y con experiencia,
+            enfocado en crear soluciones digitales funcionales, modernas y adaptadas a las necesidades reales
+            de los usuarios. Disfruto enfrentar nuevos desafíos, aprender constantemente y contribuir al éxito
+            de cada proyecto en el que participo.
+          </p>
+
+          <p>
+            Soy fundador de <strong>CH Solutions</strong>, una microagencia de desarrollo de software especializada
+            en ofrecer soluciones tecnológicas personalizadas para empresas y emprendedores, ajustadas a sus
+            necesidades y presupuestos.
+          </p>
+
+          <p>
+            También creé <strong>CH Solutions Academy</strong>, una plataforma educativa sencilla pero efectiva,
+            donde publico cursos en formato HTML para ayudar a nuevos desarrolladores a dar sus primeros pasos
+            en el mundo de la programación.
+          </p>
+
+          <p>
+            Además, escribo manuales y contenidos educativos sobre programación, y ocasionalmente publico
+            artículos relacionados con desarrollo, educación y tecnología para compartir conocimientos con
+            la comunidad.
+          </p>
+
+          <p>
+            Mi misión es seguir creciendo como profesional, compartir lo que aprendo y construir tecnología
+            que ayude a otros a avanzar.
+          </p>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- ¿Por qué trabajar conmigo? -->
-  <section id="porque-yo" class="py-5">
+  <section id="porque-yo" class="section grey darken-4 white-text">
     <div class="container">
-      <div class="row align-items-center">
-        <!-- Foto a la izquierda -->
-        <div class="col-md-5 text-center mb-4 mb-md-0">
-          <img src="images/details-background.jpg" alt="Foto de perfil" class="img-fluid rounded shadow"
-            style="max-width: 100%;">
-          <a href="cv.pdf" class="btn btn-outline-primary mt-3" download>📄 Descargar CV</a>
-        </div>
+      <h2 class="center-align">¿Por qué trabajar conmigo?</h2>
 
-        <!-- Texto a la derecha -->
-        <div class="col-md-7">
-          <h2 class="mb-3">¿Por qué trabajar conmigo?</h2>
-          <p class="text-light" style="text-align: justify;">Soy una persona confiable, eficiente y siempre actualizado
-            en el campo de la
-            programación, además si trabaja conmigo le proporcionare un trabajo de excelente calidad, el cual será
-            revisado meticulosamente para que cumpla con los estándares. también si me lo permite puedo ayudarle a
-            alcanzar sus objetivos de tecnológicos de manera más rápida y efectiva.</p>
+      <div class="row" style="margin-top: 2rem;">
 
-          <!-- Tecnologías -->
-          <div class="mt-4">
-            <h4><strong>Tecnologías:</strong></h4>
-            <br>
-            <h5><strong>Lenguajes de Programación y Frameworks:</strong></h5>
-            <div class="d-flex flex-wrap gap-3 mt-2">
-              <img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=python" />
-              <img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=lua" />
-              <img height="48px" width="48px" alt="Icone VS-Code" src="images/CustomTkinter.ico" />
-              <img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=qt" />
-              <img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=html" />
-              <img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=css" />
-              <img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=bootstrap" />
-              <img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=flask" />
-              <img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=django" />
+        <!-- Columna de la tarjeta con imagen -->
+        <div class="col s12 m4">
+          <div class="card grey darken-3 hoverable">
+            <div class="card-image">
+              <!-- Cambia esta imagen por tu foto -->
+              <img src="assets/img/details-background.jpg" alt="Foto de Cheremi"
+                style="height: 380px; object-fit: cover;">
             </div>
-          </div>
-
-          <!-- Base de Datos -->
-          <div class="mt-4">
-            <h5><strong>Base de Datos:</strong></h5>
-            <div class="d-flex flex-wrap gap-3 mt-2">
-              <img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=sqlite" />
-              <img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=mysql" />
-              <img height="60px" width="60px" alt="Icone VS-Code" src="images/access.ico" />
-            </div>
-          </div>
-
-          <!-- Herramientas -->
-          <div class="mt-4">
-            <h5><strong>Herramientas:</strong></h5>
-            <div class="d-flex flex-wrap gap-3 mt-2">
-              <img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=figma" />
-              <img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=sublime" />
-              <img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=vscode" />
-              <img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=github" />
-              <img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=git" />
-              <img height="49px" width="49px" alt="Icone VS-Code" src="images/qt_designer.ico" />
-              <img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=anaconda" />
-            </div>
-          </div>
-
-          <!-- Sistemas Operativos -->
-          <div class="mt-4">
-            <h5><strong>Sistemas Operativos:</strong></h5>
-            <div class="d-flex flex-wrap gap-3 mt-2">
-              <img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=windows" />
-              <img height="48px" width="48px" alt="Icone VS-Code" src="images/macos.svg" />
-              <img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=linux" />
+            <div class="card-action center-align">
+              <a href="Cheremi-Checo-Dominguez-CV.pdf" class="btn blue lighten-1" download>Descargar CV</a>
             </div>
           </div>
         </div>
+
+        <!-- Columna del texto -->
+        <div class="col s12 m8">
+          <p>
+            Trabajo con dedicación, enfoque práctico y una mentalidad de mejora continua. Mi prioridad
+            es crear soluciones que realmente aporten valor, que sean funcionales, claras y adaptadas
+            a las necesidades reales del usuario o del negocio.
+          </p>
+
+          <p>
+            No me limito solo a programar: analizo problemas, propongo soluciones, optimizo procesos y
+            acompaño técnicamente a mis clientes para asegurar que cada proyecto avance de forma segura,
+            estable y alineada con los objetivos.
+          </p>
+
+          <p>
+            Soy disciplinado, organizado y transparente. Me gusta comunicar cada avance, mantener una
+            estructura clara y asegurar que el cliente siempre entienda el proceso y los resultados.
+          </p>
+
+          <p>
+            Si estás buscando a alguien que combine conocimiento técnico, creatividad y compromiso real
+            con los proyectos, estaré encantado de trabajar contigo.
+          </p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Servicios -->
-  <section id="servicios" class="py-5">
+  <!-- Tecnologías -->
+  <section id="tecnologias" class="section grey darken-4 white-text">
     <div class="container">
-      <h2 class="text-center mb-5">Servicios</h2>
-      <div class="row g-4">
+      <h2 class="center-align">Tecnologías</h2>
+    
+        <div class="row">
+    
+          <!-- ÚNICA COLUMNA: tarjetas con categorías (ocupa todo el ancho ahora) -->
+          <div class="col s12 m12">
+            <!-- Card: Lenguajes y Frameworks -->
+            <div class="card blue-grey darken-4">
+              <div class="card-content">
+                <span class="card-title">Lenguajes & Frameworks</span>
+                <p class="grey-text text-lighten-1" style="margin-top: .25rem;">
+                  Mis principales lenguajes y frameworks con los que trabajo habitualmente.
+                </p>
+    
+                <div class="row" style="margin-top: .6rem;">
+                  <!-- Ícono: Python -->
+                  <div class="col s4 m2 center-align">
+                    <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">
+                      <img src="https://skillicons.dev/icons?i=python" alt="Python" class="tech-icon">
+                      <div class="tech-label">Python</div>
+                    </a>
+                  </div>
+    
+                  <!-- Ícono: Lua -->
+                  <div class="col s4 m2 center-align">
+                    <a href="https://www.lua.org/" target="_blank" rel="noopener noreferrer">
+                      <img src="https://skillicons.dev/icons?i=lua" alt="Lua" class="tech-icon">
+                      <div class="tech-label">Lua</div>
+                    </a>
+                  </div>
+    
+                  <!-- Qt -->
+                  <div class="col s4 m2 center-align">
+                    <a href="https://www.qt.io/" target="_blank" rel="noopener noreferrer">
+                      <img src="https://skillicons.dev/icons?i=qt" alt="Qt" class="tech-icon">
+                      <div class="tech-label">Qt</div>
+                    </a>
+                  </div>
+    
+                  <!-- CustomTkinter (local icon) -->
+                  <div class="col s4 m2 center-align">
+                    <a href="https://customtkinter.tomschimansky.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="assets/img/CustomTkinter.ico" alt="CustomTkinter" class="tech-icon local-icon">
+                      <div class="tech-label">CustomTkinter</div>
+                    </a>
+                  </div>
+    
+                  <!-- HTML -->
+                  <div class="col s4 m2 center-align">
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
+                      <img src="https://skillicons.dev/icons?i=html" alt="HTML" class="tech-icon">
+                      <div class="tech-label">HTML</div>
+                    </a>
+                  </div>
+    
+                  <!-- CSS -->
+                  <div class="col s4 m2 center-align">
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">
+                      <img src="https://skillicons.dev/icons?i=css" alt="CSS" class="tech-icon">
+                      <div class="tech-label">CSS</div>
+                    </a>
+                  </div>
+    
+                  <!-- Bootstrap -->
+                  <div class="col s4 m2 center-align">
+                    <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="https://skillicons.dev/icons?i=bootstrap" alt="Bootstrap" class="tech-icon">
+                      <div class="tech-label">Bootstrap</div>
+                    </a>
+                  </div>
+    
+                  <!-- Flask -->
+                  <div class="col s4 m2 center-align">
+                    <a href="https://flask.palletsprojects.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="https://skillicons.dev/icons?i=flask" alt="Flask" class="tech-icon">
+                      <div class="tech-label">Flask</div>
+                    </a>
+                  </div>
+    
+                  <!-- Django -->
+                  <div class="col s4 m2 center-align">
+                    <a href="https://www.djangoproject.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="https://skillicons.dev/icons?i=django" alt="Django" class="tech-icon">
+                      <div class="tech-label">Django</div>
+                    </a>
+                  </div>
+    
+                </div> <!-- /row icons -->
+              </div> <!-- /card-content -->
+            </div> <!-- /card -->
+    
+            <!-- Card: Bases de Datos -->
+            <div class="card blue-grey darken-4" style="margin-top:1rem;">
+              <div class="card-content">
+                <span class="card-title">Bases de Datos</span>
+                <p class="grey-text text-lighten-1" style="margin-top:.2rem;">SQL y soluciones ligeras para apps de escritorio y web.</p>
+    
+                <div class="row" style="margin-top:.6rem;">
+                  <div class="col s4 m2 center-align">
+                    <a href="https://www.sqlite.org/" target="_blank" rel="noopener noreferrer">
+                      <img src="https://skillicons.dev/icons?i=sqlite" alt="SQLite" class="tech-icon">
+                      <div class="tech-label">SQLite</div>
+                    </a>
+                  </div>
+    
+                  <div class="col s4 m2 center-align">
+                    <a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="https://skillicons.dev/icons?i=mysql" alt="MySQL" class="tech-icon">
+                      <div class="tech-label">MySQL</div>
+                    </a>
+                  </div>
+    
+                  <div class="col s4 m2 center-align">
+                    <a href="https://www.microsoft.com/es-es/microsoft-365/access" target="_blank" rel="noopener noreferrer">
+                      <img src="assets/img/access.ico" alt="MS Access" class="tech-icon local-icon">
+                      <div class="tech-label">MS Access</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- /card DB -->
+    
+            <!-- Card: Herramientas -->
+            <div class="card blue-grey darken-4" style="margin-top:1rem;">
+              <div class="card-content">
+                <span class="card-title">Herramientas</span>
+                <p class="grey-text text-lighten-1" style="margin-top:.2rem;">IDE, control de código, diseño y entornos científicos.</p>
+    
+                <div class="row" style="margin-top:.6rem;">
+                  <div class="col s4 m2 center-align">
+                    <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="https://skillicons.dev/icons?i=figma" alt="Figma" class="tech-icon">
+                      <div class="tech-label">Figma</div>
+                    </a>
+                  </div>
+    
+                  <div class="col s4 m2 center-align">
+                    <a href="https://www.sublimetext.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="https://skillicons.dev/icons?i=sublime" alt="Sublime" class="tech-icon">
+                      <div class="tech-label">Sublime</div>
+                    </a>
+                  </div>
+    
+                  <div class="col s4 m2 center-align">
+                    <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="https://skillicons.dev/icons?i=vscode" alt="VSCode" class="tech-icon">
+                      <div class="tech-label">VSCode</div>
+                    </a>
+                  </div>
+    
+                  <div class="col s4 m2 center-align">
+                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="https://skillicons.dev/icons?i=github" alt="GitHub" class="tech-icon">
+                      <div class="tech-label">GitHub</div>
+                    </a>
+                  </div>
+    
+                  <div class="col s4 m2 center-align">
+                    <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="https://skillicons.dev/icons?i=git" alt="Git" class="tech-icon">
+                      <div class="tech-label">Git</div>
+                    </a>
+                  </div>
+    
+                  <div class="col s4 m2 center-align">
+                    <a href="https://build-system.fman.io/" target="_blank" rel="noopener noreferrer">
+                      <img src="assets/img/qt_designer.ico" alt="Qt Designer" class="tech-icon local-icon">
+                      <div class="tech-label">Qt Designer</div>
+                    </a>
+                  </div>
+    
+                  <div class="col s4 m2 center-align">
+                    <a href="https://www.anaconda.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="https://skillicons.dev/icons?i=anaconda" alt="Anaconda" class="tech-icon">
+                      <div class="tech-label">Anaconda</div>
+                    </a>
+                  </div>
+    
+                </div>
+              </div>
+            </div> <!-- /card tools -->
+    
+            <!-- Card: Sistemas Operativos -->
+            <div class="card blue-grey darken-4" style="margin-top:1rem;">
+              <div class="card-content">
+                <span class="card-title">Sistemas Operativos</span>
+                <p class="grey-text text-lighten-1" style="margin-top:.2rem;">Plataformas en las que desarrollo y pruebo soluciones.</p>
+    
+                <div class="row" style="margin-top:.6rem;">
+                  <div class="col s4 m2 center-align">
+                    <a href="https://www.microsoft.com/es-es/windows" target="_blank" rel="noopener noreferrer">
+                      <img src="https://skillicons.dev/icons?i=windows" alt="Windows" class="tech-icon">
+                      <div class="tech-label">Windows</div>
+                    </a>
+                  </div>
+    
+                  <div class="col s4 m2 center-align">
+                    <a href="https://www.apple.com/mac/" target="_blank" rel="noopener noreferrer">
+                      <img src="assets/img/macos.svg" alt="macOS" class="tech-icon local-icon">
+                      <div class="tech-label">macOS</div>
+                    </a>
+                  </div>
+    
+                  <div class="col s4 m2 center-align">
+                    <a href="https://www.kernel.org/" target="_blank" rel="noopener noreferrer">
+                      <img src="https://skillicons.dev/icons?i=linux" alt="Linux" class="tech-icon">
+                      <div class="tech-label">Linux</div>
+                    </a>
+                  </div>
 
+                </div>
+              </div>
+            </div> <!-- /card SO -->
+    
+          </div> <!-- /col única -->
+    
+        </div> <!-- /row principal -->
+    
+      </div> <!-- /container -->
+    </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="section grey darken-4 white-text">
+    <div class="container">
+      <h2 class="center-align">Servicios</h2>
+
+      <div class="row" style="margin-top:1.2rem;">
         <!-- Desarrollo de Software -->
-        <div class="col-md-6">
-          <div class="card h-100 p-4 bg-dark border-0">
-            <h5 class="text-light mb-3">💻 Desarrollo de Software</h5>
-            <p class="text-light">Desarrollo de aplicaciones de escritorio y scripts personalizados que resuelven
-              problemas reales y mejoran la eficiencia de tu negocio.</p>
-            <ul class="text-light mb-0">
-              <li>Aplicaciones en Python a medida.</li>
-              <li>Automatización de procesos repetitivos.</li>
-              <li>Configuración y personalización de entornos Linux.</li>
-            </ul>
-          </div>
+        <div class="col s12 m6 l6">
+          <article class="card blue-grey darken-4 hoverable" role="article" aria-labelledby="srv-dev-title">
+            <div class="card-content">
+              <span id="srv-dev-title" class="card-title"><strong>💻 Desarrollo de Software</strong></span>
+              <p style="color: #cfcfcf;">
+                Desarrollo de software de escritorio personalizado diseñado para resolver necesidades reales de tu
+                negocio.
+              </p>
+              <ul style="color:#d4d4d4; margin-left:1rem;">
+                <li>Aplicaciones en Python a medida.</li>
+                <li>Automatización y scripting para tareas repetitivas.</li>
+                <li>Integración con bases de datos y servicios.</li>
+              </ul>
+            </div>
+          </article>
         </div>
 
-        <!-- Web y presencia digital -->
-        <div class="col-md-6">
-          <div class="card h-100 p-4 bg-dark border-0">
-            <h5 class="text-light mb-3">🌐 Web y Presencia Digital</h5>
-            <p class="text-light">Diseño y desarrollo de páginas enfocadas en conversión, más asesoría técnica para
-              emprendedores con ideas digitales.</p>
-            <ul class="text-light mb-0">
-              <li>Landing pages modernas y responsivas.</li>
-              <li>Consultoría para proyectos web o apps.</li>
-            </ul>
-          </div>
+        <!-- Web y Presencia Digital -->
+        <div class="col s12 m6 l6">
+          <article class="card blue-grey darken-4 hoverable" role="article" aria-labelledby="srv-web-title">
+            <div class="card-content">
+              <span id="srv-web-title" class="card-title"><strong>🌐 Web y Presencia Digital</strong></span>
+              <p style="color: #cfcfcf;">
+                Diseño y desarrollo de páginas enfocadas en conversión, acompañadas de asesoría técnica para
+                emprendedores.
+              </p>
+              <ul style="color:#d4d4d4; margin-left:1rem;">
+                <li>Landing pages modernas y responsivas.</li>
+                <li>Optimización básica para SEO y rendimiento.</li>
+                <li>Consultoría técnica y despliegue.</li>
+              </ul>
+            </div>
+          </article>
         </div>
 
-        <!-- Seguridad y diagnóstico -->
-        <div class="col-md-6">
-          <div class="card h-100 p-4 bg-dark border-0">
-            <h5 class="text-light mb-3">🔒 Seguridad y Diagnóstico</h5>
-            <p class="text-light">Identifico riesgos y mejoras tecnológicas en tus sistemas, ayudándote a mantener la
-              seguridad y el rendimiento.</p>
-            <ul class="text-light mb-0">
-              <li>Escaneo de vulnerabilidades en sitios y apps.</li>
-              <li>Asesoría en protección de datos sensibles.</li>
-              <li>Evaluación general de infraestructura informática.</li>
-            </ul>
-          </div>
+        <!-- Seguridad y Diagnóstico -->
+        <div class="col s12 m6 l6">
+          <article class="card blue-grey darken-4 hoverable" role="article" aria-labelledby="srv-sec-title">
+            <div class="card-content">
+              <span id="srv-sec-title" class="card-title"><strong>🔒 Seguridad y Diagnóstico</strong></span>
+              <p style="color: #cfcfcf;">
+                Identifico riesgos y mejoras tecnológicas en tus sistemas, ayudando a mantener la seguridad y el
+                rendimiento.
+              </p>
+              <ul style="color:#d4d4d4; margin-left:1rem;">
+                <li>Escaneo de vulnerabilidades en sitios y apps.</li>
+                <li>Asesoría en protección de datos sensibles.</li>
+                <li>Evaluación general de infraestructura TI.</li>
+              </ul>
+            </div>
+          </article>
         </div>
 
-        <!-- Enseñanza personalizada -->
-        <div class="col-md-6">
-          <div class="card h-100 p-4 bg-dark border-0">
-            <h5 class="text-light mb-3">👨‍🏫 Enseñanza de Programación</h5>
-            <p class="text-light">Clases individuales adaptadas a tu nivel, enfocadas en que aprendas de forma práctica
-              y directa.</p>
-            <ul class="text-light mb-0">
-              <li>Programación con Python desde cero.</li>
-              <li>Ejercicios reales y personalizados.</li>
-              <li>Ideal para estudiantes o autodidactas.</li>
-            </ul>
-          </div>
+        <!-- Enseñanza de Programación -->
+        <div class="col s12 m6 l6">
+          <article class="card blue-grey darken-4 hoverable" role="article" aria-labelledby="srv-teach-title">
+            <div class="card-content">
+              <span id="srv-teach-title" class="card-title"><strong>👨‍🏫 Enseñanza de Programación</strong></span>
+              <p style="color: #cfcfcf;">
+                Clases individuales adaptadas a tu nivel, enfocadas en que aprendas de forma práctica y directa.
+              </p>
+              <ul style="color:#d4d4d4; margin-left:1rem;">
+                <li>Programación con Python desde cero.</li>
+                <li>Ejercicios reales y personalizados.</li>
+                <li>Soporte y seguimiento en proyectos personales.</li>
+              </ul>
+            </div>
+          </article>
         </div>
-
       </div>
-    </div>
   </section>
 
   <!-- Proyectos -->
-  <section id="proyectos">
+  <section id="proyectos" class="section grey darken-4 white-text">
     <div class="container">
-      <h2 class="text-center mb-5">Mis Proyectos</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card h-100">
-            <img src="images/work-1.png" class="card-img-top" alt="Proyecto 1">
-            <div class="card-body">
-              <h5 class="card-title">Lox Launcher</h5>
-              <p class="card-text">Es un Launcher para jugar a Minecraft de manera gratuita.</p>
-              <a href="https://sourceforge.net/projects/lox-launcher/" class="btn btn-primary">Detalles</a>
+      <h2 class="center-align">Mis Proyectos</h2>
+
+      <!-- FILA 1: 3 proyectos -->
+      <div class="row" style="margin-top:1rem;">
+        <!-- Proyecto 1 -->
+        <div class="col s12 m6 l4">
+          <article class="card blue-grey darken-4 hoverable" role="article" aria-labelledby="proj-1-title">
+            <div class="card-image">
+              <img src="assets/img/work-1.png" alt="CherOS - distribución GNU/Linux" loading="lazy">
             </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100">
-            <img src="images/work-2.jpeg" class="card-img-top" alt="Proyecto 2">
-            <div class="card-body">
-              <h5 class="card-title">CherOS</h5>
-              <p class="card-text">CherOS es una Distribución GNU/Linux basada en antiX-22.</p>
-              <a href="https://sourceforge.net/projects/cheros/" class="btn btn-primary">Detalles</a>
+            <div class="card-content">
+              <span id="proj-1-title" class="card-title"><strong>Lox Launcher</strong></span>
+              <p style="color:#cfcfcf;">Launcher para jugar a Minecraft de manera gratuita.</p>
             </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100">
-            <img src="images/work-3.png" class="card-img-top" alt="Proyecto 3">
-            <div class="card-body">
-              <h5 class="card-title">Northem</h5>
-              <p class="card-text">Es un framework CSS para diseñar sitios web y aplicaciones web.</p>
-              <a href="https://github.com/arcanus47/Northem" class="btn btn-primary">Detalles</a>
+            <div class="card-action center-align">
+              <a href="https://sourceforge.net/projects/lox-launcher/" class="btn blue lighten-1">Ver detalles</a>
             </div>
-          </div>
+          </article>
         </div>
 
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="card h-100">
-              <img src="images/work-4.png" class="card-img-top" alt="Proyecto 4">
-              <div class="card-body">
-                <h5 class="card-title">CherCoin</h5>
-                <p class="card-text">Esta es una Criptomoneda creada mediante la tecnología Blockchain.</p>
-                <a href="https://github.com/arcanus47/CherCoin" class="btn btn-primary">Detalles</a>
-              </div>
+        <!-- Proyecto 2 -->
+        <div class="col s12 m6 l4">
+          <article class="card blue-grey darken-4 hoverable" role="article" aria-labelledby="proj-2-title">
+            <div class="card-image">
+              <img src="assets/img/work-2.jpeg" alt="CherOS - distribución GNU/Linux" loading="lazy">
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card h-100">
-              <img src="images/work-5.png" class="card-img-top" alt="Proyecto 5">
-              <div class="card-body">
-                <h5 class="card-title">LoxBasic</h5>
-                <p class="card-text">Es un lenguaje de programación el cual es estructurado.</p> <a
-                  href="https://loxbasic394781747.wordpress.com/" class="btn btn-primary">Detalles</a>
-              </div>
+            <div class="card-content">
+              <span id="proj-2-title" class="card-title"><strong>CherOS</strong></span>
+              <p style="color:#cfcfcf;">Distribución GNU/Linux basada en antiX-22, enfocada en rendimiento y
+                simplicidad.</p>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card h-100">
-              <img src="images/work-6.jpg" class="card-img-top" alt="Proyecto 6">
-              <div class="card-body">
-                <h5 class="card-title">Interprete Matematico</h5>
-                <p class="card-text">Este permite realizar operaciones matemáticas básicas.</p>
-                <a href="https://github.com/arcanus47/Interprete-Matematico" class="btn btn-primary">Detalles</a>
-              </div>
+            <div class="card-action center-align">
+              <a href="https://sourceforge.net/projects/cheros/" class="btn blue lighten-1">Ver detalles</a>
             </div>
-          </div>
+          </article>
+        </div>
+
+        <!-- Proyecto 3 -->
+        <div class="col s12 m6 l4">
+          <article class="card blue-grey darken-4 hoverable" role="article" aria-labelledby="proj-3-title">
+            <div class="card-image">
+              <img src="assets/img/work-3.png" alt="Northem - framework CSS" loading="lazy">
+            </div>
+            <div class="card-content">
+              <span id="proj-3-title" class="card-title"><strong>Northem</strong></span>
+              <p style="color:#cfcfcf;">Framework CSS para diseñar sitios y aplicaciones web (ligero y modular).</p>
+            </div>
+            <div class="card-action center-align">
+              <a href="https://github.com/arcanus47/Northem" class="btn blue lighten-1">Ver detalles</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- FILA 2: 3 proyectos -->
+      <div class="row">
+        <!-- Proyecto 4 -->
+        <div class="col s12 m6 l4">
+          <article class="card blue-grey darken-4 hoverable" role="article" aria-labelledby="proj-4-title">
+            <div class="card-image">
+              <img src="assets/img/work-4.png" alt="CherCoin - criptomoneda" loading="lazy">
+            </div>
+            <div class="card-content">
+              <span id="proj-4-title" class="card-title"><strong>CherCoin</strong></span>
+              <p style="color:#cfcfcf;">Criptomoneda creada mediante tecnología Blockchain.</p>
+            </div>
+            <div class="card-action center-align">
+              <a href="https://github.com/arcanus47/CherCoin" class="btn blue lighten-1">Ver detalles</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Proyecto 5 -->
+        <div class="col s12 m6 l4">
+          <article class="card blue-grey darken-4 hoverable" role="article" aria-labelledby="proj-5-title">
+            <div class="card-image">
+              <img src="assets/img/work-5.png" alt="LoxBasic - lenguaje estructurado" loading="lazy">
+            </div>
+            <div class="card-content">
+              <span id="proj-5-title" class="card-title"><strong>LoxBasic</strong></span>
+              <p style="color:#cfcfcf;">Lenguaje de programación estructurado diseñado por mí.</p>
+            </div>
+            <div class="card-action center-align">
+              <a href="https://loxbasic394781747.wordpress.com/" class="btn blue lighten-1">Ver detalles</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Proyecto 6 -->
+        <div class="col s12 m6 l4">
+          <article class="card blue-grey darken-4 hoverable" role="article" aria-labelledby="proj-6-title">
+            <div class="card-image">
+              <img src="assets/img/work-6.jpg" alt="Interprete Matemático" loading="lazy">
+            </div>
+            <div class="card-content">
+              <span id="proj-6-title" class="card-title"><strong>Interprete Matemático</strong></span>
+              <p style="color:#cfcfcf;">Herramienta para realizar operaciones matemáticas básicas.</p>
+            </div>
+            <div class="card-action center-align">
+              <a href="https://github.com/arcanus47/Interprete-Matematico" class="btn blue lighten-1">Ver detalles</a>
+            </div>
+          </article>
         </div>
       </div>
   </section>
 
   <!-- Clientes -->
-  <section id="clientes" class="py-5 bg-cliente">
+  <section id="clientes" class="section grey darken-4 white-text">
     <div class="container">
-      <div class="row justify-content-center align-items-center g-4">
-        <div class="col-4 col-md-2 text-center">
-          <img src="images/clientes/cliente-1.png" alt="Cliente 1" class="logo-cliente">
+      <div class="row" style="margin-top:1rem; align-items: center;">
+        <div class="col s6 m2 center-align">
+          <figure style="margin:0;">
+            <img src="assets/img/clientes/cliente-1.png" alt="Logo Cliente 1 — Nombre del cliente"
+              class="responsive-img logo-cliente" loading="lazy" width="200" height="80">
+          </figure>
         </div>
-        <div class="col-4 col-md-2 text-center">
-          <img src="images/clientes/cliente-2.png" alt="Cliente 2" class="logo-cliente">
+
+        <div class="col s6 m2 center-align">
+          <figure style="margin:0;">
+            <img src="assets/img/clientes/cliente-2.png" alt="Logo Cliente 2 — Nombre del cliente"
+              class="responsive-img logo-cliente" loading="lazy" width="200" height="80">
+          </figure>
         </div>
-        <div class="col-4 col-md-2 text-center">
-          <img src="images/clientes/cliente-3.png" alt="Cliente 3" class="logo-cliente">
+
+        <div class="col s6 m2 center-align">
+          <figure style="margin:0;">
+            <img src="assets/img/clientes/cliente-3.png" alt="Logo Cliente 3 — Nombre del cliente"
+              class="responsive-img logo-cliente" loading="lazy" width="200" height="80">
+          </figure>
         </div>
-        <div class="col-4 col-md-2 text-center">
-          <img src="images/clientes/cliente-4.png" alt="Cliente 4" class="logo-cliente">
+
+        <div class="col s6 m2 center-align">
+          <figure style="margin:0;">
+            <img src="assets/img/clientes/cliente-4.png" alt="Logo Cliente 4 — Nombre del cliente"
+              class="responsive-img logo-cliente" loading="lazy" width="200" height="80">
+          </figure>
         </div>
-        <div class="col-4 col-md-2 text-center">
-          <img src="images/clientes/cliente-5.png" alt="Cliente 5" class="logo-cliente">
+
+        <div class="col s6 m2 center-align">
+          <figure style="margin:0;">
+            <img src="assets/img/clientes/cliente-5.png" alt="Logo Cliente 5 — Nombre del cliente"
+              class="responsive-img logo-cliente" loading="lazy" width="200" height="80">
+          </figure>
         </div>
+
       </div>
-    </div>
   </section>
 
   <!-- Contacto -->
-  <section id="contacto" class="py-5">
+  <section id="contacto" class="section grey darken-4 white-text">
     <div class="container">
-      <h2 class="text-center mb-4">Contacto</h2>
+      <h2 class="center-align">Contacto</h2>
       <div class="row">
         <!-- Formulario -->
-        <div class="col-md-6">
-          <h5 class="mb-4 text-light">Formulario de contacto</h5>
-          <form>
-            <div class="mb-3">
-              <label for="nombre" class="form-label">Nombre:</label>
-              <input type="text" class="form-control" id="nombre" required>
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Correo electrónico:</label>
-              <input type="email" class="form-control" id="email" required>
-            </div>
-            <div class="mb-3">
-              <label for="asunto" class="form-label">Asunto:</label>
-              <input type="text" class="form-control" id="objetivo" required>
-            </div>
-            <div class="mb-3">
-              <label for="mensaje" class="form-label">Mensaje:</label>
-              <textarea class="form-control" id="mensaje" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Enviar Mensaje</button>
-          </form>
-        </div>
-
-        <!-- Información de contacto -->
-        <div class="col-md-6 ps-md-5 mt-5 mt-md-0">
-          <h5 class="mb-4 text-light">Información de contacto</h5>
-          <ul class="list-unstyled">
-            <li class="mb-3 d-flex align-items-center">
-              <i class="bi bi-envelope-fill me-3" style="color: var(--accent); font-size: 1.3rem;"></i>
-              <span class="form-label text-light">cheremycheco@gmail.com</span>
-            </li>
-            <li class="mb-3 d-flex align-items-center">
-              <i class="bi bi-telephone-fill me-3" style="color: var(--accent); font-size: 1.3rem;"></i>
-              <span class="form-label text-light">+1 (829) 985-0082</span>
-            </li>
-            <li class="d-flex align-items-center mb-4">
-              <i class="bi bi-geo-alt-fill me-3" style="color: var(--accent); font-size: 1.3rem;"></i>
-              <span class="form-label text-light">Piedra Blanca, República Dominicana</span>
-            </li>
-          </ul>
-
-          <!-- Redes Sociales -->
-          <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
-            <a href="mailto:cheremycheco@gmail.com" target="_blank">
-              <img height="40px" width="40px" alt="Correo" src="https://skillicons.dev/icons?i=gmail" />
-            </a>
-            <a href="https://www.linkedin.com/in/cheremichecodominguez/" target="_blank">
-              <img height="40px" width="40px" alt="LinkedIn" src="https://skillicons.dev/icons?i=linkedin" />
-            </a>
-            <a href="https://www.instagram.com/cheremycheco/" target="_blank">
-              <img height="40px" width="40px" alt="Instagram" src="https://skillicons.dev/icons?i=instagram" />
-            </a>
-            <a href="https://wa.me/message/ZHMJ2RA2I75QL1" target="_blank">
-              <img height="46px" width="46px" alt="whatsapp" src="images/square-whatsapp-brands.svg" />
-            </a>
-            <a href="https://github.com/arcanus47" target="_blank">
-              <img height="40px" width="40px" alt="GitHub" src="https://skillicons.dev/icons?i=github" />
-            </a>
+        <form>
+          <div class="input-field">
+            <input id="nombre" type="text" class="white-text" required>
+            <label for="nombre">Nombre</label>
           </div>
-
-        </div>
+          <div class="input-field">
+            <input id="email" type="email" class="white-text" required>
+            <label for="email">Correo Electrónico</label>
+          </div>
+          <div class="input-field">
+            <input id="asunto" type="text" class="white-text" required>
+            <label for="asunto">Asunto</label>
+          </div>
+          <div class="input-field">
+            <textarea id="mensaje" class="materialize-textarea white-text" required></textarea>
+            <label for="mensaje">Mensaje</label>
+          </div>
+          <button type="submit" class="btn blue lighten-1 waves-effect waves-light">
+            <i class="material-icons left">send</i>Enviar Mensaje</button>
+        </form>
       </div>
+    </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <div class="container text-center">
-      <p class="mb-2">&copy; 2025 arcanus47. Todos los derechos reservados.</p>
+  <footer class="page-footer blue-grey darken-4">
+    <div class="container">
+      <div class="row">
+
+        <!-- Información de Contacto -->
+        <div class="col s12 m6">
+          <h5 class="white-text">CH-Solutions Academy</h5>
+          <ul class="white-text" style="list-style: none; padding-left: 0;">
+            <li style="display: flex; align-items: center; margin-bottom: 10px;">
+              <i class="material-icons left" style="margin-right: 8px;">email</i>
+              <a href="mailto:cheremycheco@gmail.com" class="white-text" style="text-decoration: underline;">
+                cheremycheco@gmail.com
+              </a>
+            </li>
+            <li style="display: flex; align-items: center;">
+              <i class="material-icons left" style="margin-right: 8px;">phone</i>
+              <a href="tel:+18299850082" class="white-text" style="text-decoration: underline;">
+                +1 (829) 985-0082
+              </a>
+            </li>
+            <li style="display: flex; align-items: center;">
+              <i class="material-icons left" style="margin-right: 8px;">location_on</i>
+              <span class="white-text">
+                Villa Sonador, Piedra Blanca, Monseñor Nouel, República Dominicana
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Redes sociales -->
+        <div class="col s12 m6 center-align">
+          <h5 class="white-text">Redes Sociales</h5>
+          <p class="white-text" style="margin-bottom: 15px;">
+            ¡Síguenos en nuestras redes sociales para estar al tanto de nuestras novedades!
+          </p>
+          <a href="mailto:cheremycheco@gmail.com" target="_blank" aria-label="Enviar email"
+            class="btn-floating red darken-3" style="margin: 5px;">
+            <i class="material-icons">email</i>
+          </a>
+          <a href="https://www.linkedin.com/in/cheremichecodominguez/" target="_blank" aria-label="LinkedIn"
+            class="btn-floating blue darken-3" style="margin: 5px;">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.instagram.com/cheremycheco/" target="_blank" aria-label="Instagram"
+            class="btn-floating pink" style="margin: 5px;">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/18299850082" target="_blank" aria-label="WhatsApp" class="btn-floating green darken-2"
+            style="margin: 5px;">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://github.com/arcanus47" target="_blank" aria-label="Github" class="btn-floating grey darken-4"
+            style="margin: 5px;">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Créditos centrados -->
+      <div class="row"
+        style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; padding: 15px 0; border-top: 1px solid rgba(255,255,255,0.2); margin-top: 20px;">
+        <div class="col s12 center-align">
+          <p class="white-text" style="margin: 0;">
+            &copy; 2021 <a href="https://github.com/arcanus47" class="white-text"
+              style="text-decoration: underline;"><strong>Arcanus47</strong></a>. Todos los derechos
+            reservados.
+          </p>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems);
+    });
+
+    document.addEventListener('DOMContentLoaded', function(){
+      var elems = document.querySelectorAll('.tooltipped');
+      M.Tooltip.init(elems, {enterDelay: 100, exitDelay: 50});
+    });
+
+    document.querySelectorAll('a[aria-label^="Contactar"]').forEach(btn => {
+      btn.addEventListener('click', function () {
+        // Ejemplo: rastrear en consola o enviar a analytics
+        console.log('CTA Contactar clickeado:', this.textContent.trim());
+        // Si usas analytics: enviar evento aquí (gtag, ga, etc.)
+      });
+    });
+
+  </script>
 </body>
 
 </html>
